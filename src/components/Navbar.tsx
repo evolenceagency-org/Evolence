@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import { cn } from "@/lib/cn";
 import { NAV_LINKS } from "@/lib/site";
+import { Container } from "@/components/Container";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -32,7 +33,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/40 bg-white/60 backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/40">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+      <Container className="flex items-center justify-between py-3">
         <Link
           href="/"
           className="rounded-md text-sm font-semibold tracking-tight text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900/20 dark:text-zinc-50 dark:focus-visible:ring-white/20"
@@ -72,7 +73,7 @@ export function Navbar() {
         >
           {open ? "Close" : "Menu"}
         </button>
-      </div>
+      </Container>
 
       <div
         id="mobile-menu"
@@ -81,7 +82,7 @@ export function Navbar() {
           open ? "block" : "hidden",
         )}
       >
-        <div className="mx-auto w-full max-w-6xl px-4 pb-4 sm:px-6">
+        <Container className="pb-4">
           <div className="rounded-3xl border border-white/40 bg-white/70 p-3 shadow-[0_10px_30px_rgba(0,0,0,0.06)] backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/40">
             <div className="flex flex-col gap-1">
               {NAV_LINKS.map((item) => (
@@ -105,9 +106,8 @@ export function Navbar() {
               </Link>
             </div>
           </div>
-        </div>
+        </Container>
       </div>
     </header>
   );
 }
-
