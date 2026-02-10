@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   },
   description: SITE.description,
   applicationName: "Evolence",
+  icons: {
+    icon: "/assets/favicon.svg",
+  },
   openGraph: {
     type: "website",
     title: SITE.title,
