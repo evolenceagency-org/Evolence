@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ThanksPage() {
   return (
-    <section className="py-14 sm:py-20" data-reveal>
+    <section className="py-16 sm:py-24" data-reveal>
       <Container>
         <div className="mx-auto max-w-2xl">
           <GlassCard className="text-center">

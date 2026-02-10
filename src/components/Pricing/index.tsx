@@ -25,7 +25,7 @@ export function Pricing({
   showHeader = true,
 }: PricingProps) {
   return (
-    <section className="py-14 sm:py-20" data-reveal>
+    <section className="py-16 sm:py-24" data-reveal>
       <Container>
         {showHeader ? (
           <SectionTitle

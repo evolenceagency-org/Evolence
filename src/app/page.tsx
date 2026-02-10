@@ -10,12 +10,12 @@ export default function HomePage() {
     <div>
       <Hero />
 
-      <section className="py-14 sm:py-20" data-reveal>
+      <section className="py-16 sm:py-24" data-reveal>
         <Container>
           <SectionTitle
             eyebrow="What we do"
             title="Simple systems that remove friction"
-            subtitle="Minimal, conversion-focused delivery - so your business runs smoother, faster, and clearer."
+            subtitle="Minimal, conversion-focused delivery so your business runs smoother, faster, and clearer."
           />
           <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
             {SERVICES.map((s) => (
@@ -40,12 +40,12 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="py-14 sm:py-20" data-reveal>
+      <section className="py-16 sm:py-24" data-reveal>
         <Container>
           <SectionTitle
             eyebrow="How it works"
             title="Fast, focused, and clear"
-            subtitle="A simple process designed for speed - without sacrificing quality."
+            subtitle="A simple process designed for speed without sacrificing quality."
           />
 
           <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
@@ -60,7 +60,7 @@ export default function HomePage() {
               },
               {
                 title: "Refine + handoff",
-                text: "We iterate once, polish, and hand over with simple guidance so it's easy to use.",
+                text: "We iterate once, polish, and hand over with simple guidance for easy use.",
               },
             ].map((step, idx) => (
               <GlassCard key={step.title}>
@@ -83,7 +83,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="py-14 sm:py-20" data-reveal>
+      <section className="py-16 sm:py-24" data-reveal>
         <Container>
           <SectionTitle
             eyebrow="Results"
@@ -110,12 +110,12 @@ export default function HomePage() {
 
       <Pricing mode="compact" />
 
-      <section className="py-14 sm:py-20" data-reveal>
+      <section className="py-16 sm:py-24" data-reveal>
         <Container>
           <SectionTitle
             eyebrow="FAQ"
             title="Quick answers"
-            subtitle="No fluff - just the essentials."
+            subtitle="No fluff. Just the essentials."
           />
 
           <div className="mt-10 grid grid-cols-1 gap-4 sm:gap-6">

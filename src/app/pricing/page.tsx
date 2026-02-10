@@ -16,7 +16,7 @@ export default function PricingPage() {
     <div>
       <Pricing mode="full" as="h1" />
 
-      <section className="pb-14 sm:pb-20" data-reveal>
+      <section className="pb-16 sm:pb-24" data-reveal>
         <Container>
           <GlassCard className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>

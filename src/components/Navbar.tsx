@@ -15,6 +15,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const toggleButtonRef = useRef<HTMLButtonElement | null>(null);
   const firstLinkRef = useRef<HTMLAnchorElement | null>(null);
+  const panelRef = useRef<HTMLDivElement | null>(null);
   const hasMountedRef = useRef(false);
 
   const isActive = useMemo(() => {
@@ -59,15 +60,31 @@ export function Navbar() {
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
       if (e.key === "Escape") setOpen(false);
+      if (e.key !== "Tab" || !open) return;
+      const focusables = panelRef.current?.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      );
+      if (!focusables || focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+        return;
+      }
+      if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     }
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
+  }, [open]);
 
   const navLinkBase =
     "group relative text-sm font-medium text-slate-900 transition-colors hover:text-[#2563eb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/30";
   const navLinkUnderline =
-    "after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#2563eb] after:transition-transform after:duration-300 after:content-[''] group-hover:after:scale-x-100";
+    "after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#2563eb] after:transition-transform after:duration-300 after:content-[''] group-hover:after:scale-x-100 group-focus-visible:after:scale-x-100";
 
   return (
     <header
@@ -84,7 +101,7 @@ export function Navbar() {
           aria-label="Evolence home"
           className="rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/30"
         >
-          <Logo className="scale-[0.72] origin-left" />
+          <Logo className="scale-[0.7] origin-left" />
         </Link>
 
         <nav className="hidden items-center gap-6 lg:gap-8 sm:flex">
@@ -160,6 +177,7 @@ export function Navbar() {
             "fixed right-0 top-0 z-[60] h-full w-[78%] max-w-xs bg-white shadow-[0_24px_60px_rgba(15,23,42,0.18)] transition-transform duration-300",
             open ? "translate-x-0" : "translate-x-full",
           )}
+          ref={panelRef}
         >
           <div className="flex h-[76px] items-center justify-between border-b border-slate-200/70 px-5">
             <span className="text-sm font-semibold text-slate-900">Menu</span>

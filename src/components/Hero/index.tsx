@@ -6,16 +6,16 @@ import { SITE } from "@/lib/site";
 
 export function Hero() {
   return (
-    <section className="pt-16 sm:pt-24" data-reveal>
+    <section className="pt-20 sm:pt-28" data-reveal>
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="flex flex-col gap-6" data-reveal>
             <div className="w-fit rounded-full border border-slate-200/70 bg-white px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-slate-500">
-              Premium, lightweight builds
+              Premium, lightweight delivery
             </div>
             <div className="space-y-5">
-              <h1 className="text-4xl font-semibold tracking-tight text-[#0f172a] sm:text-5xl">
-                {SITE.title}
+              <h1 className="text-4xl font-semibold tracking-tight text-[#0f172a] sm:text-5xl lg:text-6xl">
+                {SITE.heroTitle ?? SITE.title}
               </h1>
               <p className="text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
                 {SITE.description}

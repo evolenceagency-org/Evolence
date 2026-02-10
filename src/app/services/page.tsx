@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <section className="py-14 sm:py-20" data-reveal>
+    <section className="py-16 sm:py-24" data-reveal>
       <Container>
         <SectionTitle
           eyebrow="Services"

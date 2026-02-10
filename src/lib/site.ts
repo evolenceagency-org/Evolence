@@ -3,8 +3,9 @@
 export const SITE = {
   name: "Evolence",
   title: "Evolence - Digital systems that make your business run faster",
+  heroTitle: "Digital systems that make your business run faster",
   description:
-    "Notion systems, AI automation, and modern web presence - built fast and designed to convert.",
+    "Notion systems, AI automation, and a modern web presence - built fast and designed to convert.",
   trustLine: "Notion systems / Automation / Modern websites",
 };
 

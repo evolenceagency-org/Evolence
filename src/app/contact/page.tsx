@@ -34,7 +34,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
   ].filter(Boolean) as Array<{ href: string; label: string }>;
 
   return (
-    <section className="py-14 sm:py-20" data-reveal>
+    <section className="py-16 sm:py-24" data-reveal>
       <Container>
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-5">
