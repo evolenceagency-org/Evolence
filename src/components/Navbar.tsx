@@ -26,6 +26,15 @@ export function Navbar() {
   }, [pathname]);
 
   useEffect(() => {
+    if (!open) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [open]);
+
+  useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -124,9 +133,13 @@ export function Navbar() {
             open ? "opacity-100" : "opacity-0",
           )}
           onClick={() => setOpen(false)}
+          aria-hidden={!open}
         />
         <div
           id="mobile-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-hidden={!open}
           className={cn(
             "fixed right-0 top-0 z-[60] h-full w-[78%] max-w-xs bg-white shadow-[0_24px_60px_rgba(15,23,42,0.18)] transition-transform duration-300",
             open ? "translate-x-0" : "translate-x-full",

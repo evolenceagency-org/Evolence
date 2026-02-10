@@ -7,5 +7,6 @@ declare namespace NodeJS {
     NEXT_PUBLIC_INSTAGRAM_URL?: string;
     NOTION_TOKEN?: string;
     NOTION_DATABASE_ID?: string;
+    MAKE_WEBHOOK_URL?: string;
   }
 }
