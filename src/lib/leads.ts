@@ -1,4 +1,4 @@
-export const BUSINESS_TYPES = [
+﻿export const BUSINESS_TYPES = [
   "Freelancer",
   "Coach / Consultant",
   "Agency",
@@ -66,7 +66,7 @@ export function validateLeadPayload(payload: unknown): LeadValidationResult {
   if (!name) {
     errors.fields.name = "Full name is required.";
   } else if (name.length < 2 || name.length > 80) {
-    errors.fields.name = "Full name must be 2–80 characters.";
+    errors.fields.name = "Full name must be 2-80 characters.";
   }
 
   if (!email) {
@@ -88,7 +88,7 @@ export function validateLeadPayload(payload: unknown): LeadValidationResult {
   if (!message) {
     errors.fields.message = "Message is required.";
   } else if (message.length < 10 || message.length > 2000) {
-    errors.fields.message = "Message must be 10–2000 characters.";
+    errors.fields.message = "Message must be 10-2000 characters.";
   }
 
   if (plan && !PLAN_NAMES.includes(plan as PlanName)) {
@@ -111,4 +111,3 @@ export function validateLeadPayload(payload: unknown): LeadValidationResult {
     },
   };
 }
-

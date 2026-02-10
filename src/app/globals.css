@@ -1,17 +1,10 @@
 @import "tailwindcss";
+@import "../styles/animations.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --foreground: #0f172a;
   color-scheme: light;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    color-scheme: dark;
-  }
 }
 
 html,
@@ -36,5 +29,5 @@ body {
 }
 
 ::selection {
-  background: rgba(24, 24, 27, 0.12);
+  background: rgba(37, 99, 235, 0.15);
 }

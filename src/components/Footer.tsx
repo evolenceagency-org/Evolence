@@ -1,8 +1,9 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 import { cn } from "@/lib/cn";
 import { NAV_LINKS, SOCIALS } from "@/lib/site";
 import { Container } from "@/components/Container";
+import { Logo } from "@/components/Logo";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -12,17 +13,17 @@ export function Footer() {
   ].filter(Boolean) as Array<{ href: string; label: string }>;
 
   return (
-    <footer className="border-t border-zinc-200/60 py-10 dark:border-white/10">
+    <footer className="border-t border-slate-200/60 py-10">
       <Container className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-col gap-2">
           <Link
             href="/"
-            className="w-fit rounded-md text-sm font-semibold text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900/20 dark:text-zinc-50 dark:focus-visible:ring-white/20"
+            className="w-fit rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/30"
           >
-            Evolence
+            <Logo className="scale-[0.85] origin-left" />
           </Link>
-          <p className="text-sm text-zinc-600 dark:text-zinc-300">
-            © {year} Evolence. All rights reserved.
+          <p className="text-sm text-slate-600">
+            (c) {year} Evolence. All rights reserved.
           </p>
         </div>
 
@@ -32,7 +33,7 @@ export function Footer() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white"
+                className="text-sm text-slate-600 transition-colors hover:text-slate-900"
               >
                 {item.label}
               </Link>
@@ -48,7 +49,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(
-                    "inline-flex h-9 items-center justify-center rounded-full bg-white/70 px-4 text-sm font-medium text-zinc-900 ring-1 ring-inset ring-zinc-200 transition-colors hover:bg-white dark:bg-zinc-900/50 dark:text-zinc-100 dark:ring-zinc-800 dark:hover:bg-zinc-900/70",
+                    "inline-flex h-9 items-center justify-center rounded-full bg-white px-4 text-sm font-medium text-slate-900 ring-1 ring-inset ring-slate-200 transition-colors hover:bg-slate-50",
                   )}
                 >
                   {s.label}
@@ -61,4 +62,3 @@ export function Footer() {
     </footer>
   );
 }
-

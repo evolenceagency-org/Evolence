@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 import { Container } from "@/components/Container";
 import { GlassCard } from "@/components/GlassCard";
@@ -34,14 +34,14 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
   ].filter(Boolean) as Array<{ href: string; label: string }>;
 
   return (
-    <section className="py-14 sm:py-20">
+    <section className="py-14 sm:py-20" data-reveal>
       <Container>
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-5">
             <SectionTitle
               eyebrow="Contact"
               as="h1"
-              title="Let’s build something clean and fast."
+              title="Let's build something clean and fast."
               subtitle="Tell us what you want to ship. We reply within 24h."
             />
 
@@ -53,7 +53,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-10 items-center justify-center rounded-full bg-white/70 px-4 text-sm font-medium text-zinc-900 ring-1 ring-inset ring-zinc-200 transition-colors hover:bg-white dark:bg-zinc-950/40 dark:text-zinc-100 dark:ring-zinc-800 dark:hover:bg-zinc-950/60"
+                    className="inline-flex h-10 items-center justify-center rounded-full bg-white px-4 text-sm font-medium text-slate-900 ring-1 ring-inset ring-slate-200 transition-colors hover:bg-slate-50"
                   >
                     Contact via {s.label}
                   </a>
@@ -61,10 +61,10 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
               </div>
             ) : null}
 
-            <div className="mt-10 space-y-3 text-sm leading-7 text-zinc-600 dark:text-zinc-300">
+            <div className="mt-10 space-y-3 text-sm leading-7 text-slate-600">
               <p>
-                Share your goal, current setup, and what “done” looks like. If
-                you selected a plan, we’ll match the scope to it.
+                Share your goal, current setup, and what "done" looks like. If
+                you selected a plan, we'll match the scope to it.
               </p>
               <p>
                 Prefer the fastest path? Starter is designed for quick wins and
@@ -83,3 +83,4 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
     </section>
   );
 }
+

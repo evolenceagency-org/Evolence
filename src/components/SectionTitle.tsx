@@ -25,15 +25,15 @@ export function SectionTitle({
   return (
     <div className={cn("flex flex-col gap-3", alignClasses, className)}>
       {eyebrow ? (
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
           {eyebrow}
         </p>
       ) : null}
-      <Heading className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-3xl">
+      <Heading className="text-2xl font-semibold tracking-tight text-[#0f172a] sm:text-3xl">
         {title}
       </Heading>
       {subtitle ? (
-        <p className="max-w-2xl text-sm leading-7 text-zinc-600 dark:text-zinc-300 sm:text-base">
+        <p className="max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
           {subtitle}
         </p>
       ) : null}
