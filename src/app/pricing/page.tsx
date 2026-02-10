@@ -24,7 +24,7 @@ export default function PricingPage() {
                 Not sure which plan fits?
               </h3>
               <p className="mt-2 text-sm text-slate-600">
-                Send a message and we'll recommend the fastest option for your
+                Send a message and we&apos;ll recommend the fastest option for your
                 goal.
               </p>
             </div>

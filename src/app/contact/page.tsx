@@ -41,7 +41,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
             <SectionTitle
               eyebrow="Contact"
               as="h1"
-              title="Let's build something clean and fast."
+              title="Let&apos;s build something clean and fast."
               subtitle="Tell us what you want to ship. We reply within 24h."
             />
 
@@ -63,8 +63,8 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
 
             <div className="mt-10 space-y-3 text-sm leading-7 text-slate-600">
               <p>
-                Share your goal, current setup, and what "done" looks like. If
-                you selected a plan, we'll match the scope to it.
+                Share your goal, current setup, and what &quot;done&quot; looks like. If
+                you selected a plan, we&apos;ll match the scope to it.
               </p>
               <p>
                 Prefer the fastest path? Starter is designed for quick wins and

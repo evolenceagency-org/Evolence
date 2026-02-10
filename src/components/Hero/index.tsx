@@ -1,4 +1,6 @@
-﻿import { Button } from "@/components/Button";
+﻿import Image from "next/image";
+
+import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { SITE } from "@/lib/site";
 
@@ -41,18 +43,26 @@ export function Hero() {
             data-reveal
           >
             <div className="hero-gear-stack">
-              <img
-                src="/assets/hero/hero-gear-shadow.svg"
-                alt=""
-                className="hero-gear hero-gear-shadow animate-gear-slower"
-                aria-hidden="true"
-              />
-              <img
-                src="/assets/hero/hero-gear-front.svg"
-                alt=""
-                className="hero-gear animate-gear-slow"
-                aria-hidden="true"
-              />
+              <div className="hero-gear hero-gear-shadow animate-gear-slower" aria-hidden="true">
+                <Image
+                  src="/assets/hero/hero-gear-shadow.svg"
+                  alt=""
+                  fill
+                  sizes="(max-width: 1024px) 78vw, 30rem"
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <div className="hero-gear animate-gear-slow" aria-hidden="true">
+                <Image
+                  src="/assets/hero/hero-gear-front.svg"
+                  alt=""
+                  fill
+                  sizes="(max-width: 1024px) 78vw, 30rem"
+                  className="object-contain"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>

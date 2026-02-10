@@ -1,4 +1,5 @@
-﻿import Link from "next/link";
+﻿import Image from "next/image";
+import Link from "next/link";
 
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
@@ -60,7 +61,15 @@ export function Pricing({
                 ) : null}
 
                 <div className="pricing-card-art">
-                  <img src={tierArt[plan.name]} alt="" aria-hidden="true" />
+                  <Image
+                    src={tierArt[plan.name]}
+                    alt=""
+                    width={320}
+                    height={420}
+                    className="h-auto w-[min(220px,70%)]"
+                    sizes="(max-width: 1024px) 70vw, 220px"
+                    priority={isPro}
+                  />
                 </div>
 
                 <div className="flex items-baseline justify-between gap-4">

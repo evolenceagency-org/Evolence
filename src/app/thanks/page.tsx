@@ -6,7 +6,7 @@ import { GlassCard } from "@/components/GlassCard";
 
 export const metadata: Metadata = {
   title: "Thanks",
-  description: "Message received. We'll reply within 24 hours.",
+  description: "Message received. We&apos;ll reply within 24 hours.",
 };
 
 export default function ThanksPage() {
@@ -22,7 +22,7 @@ export default function ThanksPage() {
               Thanks - we got your message.
             </h1>
             <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
-              We'll reply within 24 hours with the next step.
+              We&apos;ll reply within 24 hours with the next step.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">

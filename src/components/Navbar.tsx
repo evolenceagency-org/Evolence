@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { cn } from "@/lib/cn";
 import { NAV_LINKS } from "@/lib/site";
@@ -13,6 +13,9 @@ export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const toggleButtonRef = useRef<HTMLButtonElement | null>(null);
+  const firstLinkRef = useRef<HTMLAnchorElement | null>(null);
+  const hasMountedRef = useRef(false);
 
   const isActive = useMemo(() => {
     return (href: string) => {
@@ -22,8 +25,20 @@ export function Navbar() {
   }, [pathname]);
 
   useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
+    if (!hasMountedRef.current) {
+      hasMountedRef.current = true;
+      return;
+    }
+
+    if (open) {
+      requestAnimationFrame(() => {
+        firstLinkRef.current?.focus();
+      });
+      return;
+    }
+
+    toggleButtonRef.current?.focus();
+  }, [open]);
 
   useEffect(() => {
     if (!open) return;
@@ -101,6 +116,7 @@ export function Navbar() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
+          ref={toggleButtonRef}
         >
           <span className="sr-only">Toggle menu</span>
           <span className="flex flex-col items-center justify-center gap-1">
@@ -160,7 +176,7 @@ export function Navbar() {
             </button>
           </div>
           <div className="flex flex-col gap-2 p-5">
-            {NAV_LINKS.map((item) => (
+            {NAV_LINKS.map((item, index) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -168,6 +184,8 @@ export function Navbar() {
                   "rounded-2xl px-4 py-3 text-sm font-medium text-slate-900 transition-colors hover:bg-slate-100 hover:text-[#2563eb]",
                   isActive(item.href) && "bg-slate-100 text-slate-900",
                 )}
+                ref={index === 0 ? firstLinkRef : undefined}
+                onClick={() => setOpen(false)}
               >
                 {item.label}
               </Link>
@@ -175,6 +193,7 @@ export function Navbar() {
             <Link
               href="/contact"
               className="mt-2 inline-flex h-11 items-center justify-center rounded-2xl bg-[#2563eb] px-5 text-sm font-semibold text-white shadow-[0_10px_22px_rgba(37,99,235,0.25)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1d4ed8] hover:shadow-[0_14px_28px_rgba(37,99,235,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/30"
+              onClick={() => setOpen(false)}
             >
               Book a Call
             </Link>

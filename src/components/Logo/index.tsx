@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { cn } from "@/lib/cn";
 
 type LogoProps = {
@@ -33,18 +35,26 @@ export function Logo({ className, withWordmark = true }: LogoProps) {
           />
         </svg>
         <div className="relative mx-3 flex items-center justify-center">
-          <img
-            src="/assets/logo/gear.svg"
-            alt=""
-            className="logo-gear animate-gear-slow"
-            aria-hidden="true"
-          />
-          <img
-            src="/assets/logo/symbol_E.svg"
-            alt=""
-            className="logo-symbol"
-            aria-hidden="true"
-          />
+          <div className="logo-gear animate-gear-slow" aria-hidden="true">
+            <Image
+              src="/assets/logo/gear.svg"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 40px, 56px"
+              className="object-contain"
+              priority
+            />
+          </div>
+          <div className="logo-symbol" aria-hidden="true">
+            <Image
+              src="/assets/logo/symbol_E.svg"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 28px, 44px"
+              className="object-contain"
+              priority
+            />
+          </div>
         </div>
         <svg
           className="logo-circuit -scale-x-100"

@@ -105,6 +105,7 @@
 .logo-gear {
   width: clamp(40px, 5vw, 56px);
   height: clamp(40px, 5vw, 56px);
+  position: relative;
   transform-origin: 50% 50%;
   will-change: transform;
 }
