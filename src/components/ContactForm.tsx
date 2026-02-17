@@ -92,7 +92,7 @@ export function ContactForm({ plan }: ContactFormProps) {
   }
 
   const inputBase =
-    "mt-2 w-full rounded-2xl bg-white px-4 py-3 text-sm text-slate-900 ring-1 ring-inset ring-slate-200 outline-none transition focus:ring-2 focus:ring-blue-500/30";
+    "mt-2 w-full min-h-11 rounded-2xl bg-white px-4 py-3 text-sm text-slate-900 ring-1 ring-inset ring-slate-200 outline-none transition focus:ring-2 focus:ring-blue-500/30";
 
   const labelBase = "text-sm font-medium text-slate-900";
 
@@ -236,7 +236,7 @@ export function ContactForm({ plan }: ContactFormProps) {
         <button
           type="submit"
           disabled={pending}
-          className="inline-flex h-11 items-center justify-center rounded-full bg-[#2563eb] px-6 text-sm font-medium text-white transition-colors hover:bg-[#1d4ed8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/30 disabled:opacity-60"
+          className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#2563eb] px-6 text-sm font-medium text-white transition-[transform,background-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-[#1d4ed8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/30 disabled:opacity-60 active:scale-[0.98] motion-reduce:transition-none motion-reduce:transform-none touch-manipulation"
         >
           {pending ? "Sending..." : "Send message"}
         </button>

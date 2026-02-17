@@ -29,11 +29,11 @@ export function SectionTitle({
           {eyebrow}
         </p>
       ) : null}
-      <Heading className="text-2xl font-semibold tracking-tight text-[#0f172a] sm:text-3xl sm:leading-tight">
+      <Heading className="text-[clamp(1.5rem,2.2vw+1rem,1.875rem)] font-semibold tracking-tight text-[#0f172a] leading-tight">
         {title}
       </Heading>
       {subtitle ? (
-        <p className="max-w-2xl text-sm leading-7 text-slate-600 sm:text-[0.95rem]">
+        <p className="max-w-2xl text-[clamp(0.875rem,0.6vw+0.75rem,0.95rem)] leading-7 text-slate-600">
           {subtitle}
         </p>
       ) : null}

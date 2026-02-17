@@ -2,6 +2,7 @@
   --evo-charcoal: #0f172a;
   --evo-white: #f8fafc;
   --evo-accent: #2563eb;
+  --evo-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --evo-shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.12);
   --evo-shadow-hover: 0 22px 55px rgba(15, 23, 42, 0.18);
 }
@@ -12,16 +13,6 @@
   }
   to {
     transform: translate(var(--gear-x, 0px), var(--gear-y, 0px)) rotate(360deg);
-  }
-}
-
-@keyframes gear-spin-reverse {
-  from {
-    transform: translate(var(--gear-x, 0px), var(--gear-y, 0px)) rotate(0deg);
-  }
-  to {
-    transform: translate(var(--gear-x, 0px), var(--gear-y, 0px))
-      rotate(-360deg);
   }
 }
 
@@ -36,6 +27,16 @@
   }
 }
 
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
 .animate-gear-slow {
   animation: gear-spin 18s linear infinite;
 }
@@ -44,18 +45,14 @@
   animation: gear-spin 30s linear infinite;
 }
 
-.animate-gear-reverse {
-  animation: gear-spin-reverse 24s linear infinite;
-}
-
 .page-shell {
-  animation: page-enter 0.85s ease both;
+  animation: page-enter 0.45s var(--evo-ease) both;
 }
 
 [data-reveal] {
   opacity: 0;
   transform: translateY(12px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.35s var(--evo-ease), transform 0.35s var(--evo-ease);
   will-change: opacity, transform;
 }
 
@@ -90,7 +87,7 @@
   opacity: 0.22;
   stroke: rgba(37, 99, 235, 0.2);
   stroke-width: 0.6;
-  transition: opacity 0.4s ease, stroke 0.4s ease;
+  transition: opacity 0.35s var(--evo-ease), stroke 0.35s var(--evo-ease);
 }
 
 .logo-group:hover .logo-circuit-lines {
@@ -122,9 +119,15 @@
 .hero-gear-stack {
   position: relative;
   width: min(30rem, 78vw);
+  max-width: 100%;
   aspect-ratio: 1;
   display: grid;
   place-items: center;
+}
+
+.hero-gear-float {
+  animation: hero-float 10s var(--evo-ease) infinite;
+  will-change: transform;
 }
 
 .hero-gear {
@@ -137,8 +140,8 @@
 }
 
 .hero-gear-shadow {
-  --gear-x: 12px;
-  --gear-y: 14px;
+  --gear-x: clamp(6px, 2vw, 12px);
+  --gear-y: clamp(8px, 2.2vw, 14px);
   opacity: 0.18;
 }
 
@@ -153,7 +156,8 @@
   background: #ffffff;
   border: 1px solid rgba(15, 23, 42, 0.08);
   box-shadow: var(--evo-shadow-soft);
-  transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+  transition: transform 0.35s var(--evo-ease), box-shadow 0.35s var(--evo-ease),
+    border-color 0.35s var(--evo-ease);
   overflow: hidden;
   will-change: transform;
 }
@@ -173,7 +177,7 @@
   );
   opacity: 0;
   transform: translateX(-40%);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.45s var(--evo-ease), transform 0.45s var(--evo-ease);
   pointer-events: none;
 }
 

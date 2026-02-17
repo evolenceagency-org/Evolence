@@ -53,7 +53,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-10 items-center justify-center rounded-full bg-white px-4 text-sm font-medium text-slate-900 ring-1 ring-inset ring-slate-200 transition-colors hover:bg-slate-50"
+                    className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-4 text-sm font-medium text-slate-900 ring-1 ring-inset ring-slate-200 transition-[transform,background-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-slate-50 active:scale-[0.98] motion-reduce:transition-none motion-reduce:transform-none"
                   >
                     Contact via {s.label}
                   </a>

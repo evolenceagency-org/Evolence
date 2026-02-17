@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { MotionConfig } from "framer-motion";
 
 type MotionProviderProps = {
   children: ReactNode;
@@ -46,5 +47,5 @@ export function MotionProvider({ children }: MotionProviderProps) {
     return () => observer.disconnect();
   }, [pathname]);
 
-  return children;
+  return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
 }

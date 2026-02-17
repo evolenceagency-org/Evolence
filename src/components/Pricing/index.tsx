@@ -68,7 +68,7 @@ export function Pricing({
                     height={420}
                     className="h-auto w-[min(220px,70%)]"
                     sizes="(max-width: 1024px) 70vw, 220px"
-                    priority={isPro}
+                    priority={mode === "full" && isPro}
                   />
                 </div>
 

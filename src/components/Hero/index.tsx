@@ -14,10 +14,10 @@ export function Hero() {
               Premium, lightweight delivery
             </div>
             <div className="space-y-5">
-              <h1 className="text-4xl font-semibold tracking-tight text-[#0f172a] sm:text-5xl lg:text-6xl">
+              <h1 className="text-[clamp(2.25rem,3.5vw+1.5rem,3.75rem)] font-semibold tracking-tight text-[#0f172a]">
                 {SITE.heroTitle ?? SITE.title}
               </h1>
-              <p className="text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+              <p className="text-[clamp(1rem,2.2vw,1.125rem)] leading-7 text-slate-600 sm:leading-8">
                 {SITE.description}
               </p>
             </div>
@@ -42,7 +42,7 @@ export function Hero() {
             className="flex items-center justify-center lg:justify-end"
             data-reveal
           >
-            <div className="hero-gear-stack">
+            <div className="hero-gear-stack hero-gear-float">
               <div className="hero-gear hero-gear-shadow animate-gear-slower" aria-hidden="true">
                 <Image
                   src="/assets/hero/hero-gear-shadow.svg"
